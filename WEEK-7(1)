@@ -1,0 +1,145 @@
+#include<iostream>
+using namespace std;
+
+//--------------- Single Inheritance ---------------
+class Vehicle {
+    public:
+        Vehicle() {
+            cout << "\n--- Single Inheritance ---" << endl;
+            cout << "This is a vehicle" << endl;
+        }
+};
+
+class Car : public Vehicle {
+    public:
+        Car() {
+            cout << "This vehicle is a Car" << endl;
+        }
+};
+
+//---------------- Multiple Inheritance ----------------
+class Milk {
+    public:
+        Milk() {
+            cout << "\n--- Multiple Inheritance ---" << endl;
+            cout << "This is a milk-giving animal (e.g., Cow)" << endl;
+        }
+};
+
+class Eggs {
+    public:
+        Eggs() {
+            cout << "This is an egg-laying animal (e.g., Snake)" << endl;
+        }
+};
+
+class Milk_Eggs : public Milk, public Eggs {
+    public:
+        Milk_Eggs() {
+            cout << "This animal gives both milk and eggs (e.g., Platypus)" << endl;
+        }
+};
+
+//------------ Multilevel Inheritance ------------
+class Pallaya {
+    public:
+        Pallaya() {
+            cout << "\n--- Multilevel Inheritance ---" << endl;
+            cout << "The Grandfather: PALLAYA" << endl;
+        }
+};
+
+class SaiRam : public Pallaya {
+    public:
+        SaiRam() {
+            cout << "The Father: SAIRAM" << endl;
+        }
+};
+
+class Mohitha : public SaiRam {
+    public:
+        Mohitha() {
+            cout << "This is me: MOHITHA" << endl;
+        }
+};
+
+class Future : public Mohitha {
+    public:
+        Future() {
+            cout << "This is my daughter: Future One" << endl;
+        }
+};
+
+//-------- Hierarchical Inheritance --------
+class Vehicle2 {
+    public:
+        Vehicle2() {
+            cout << "\n--- Hierarchical Inheritance ---" << endl;
+            cout << "This is a vehicle" << endl;
+        }
+};
+
+class Car2 : public Vehicle2 {
+    public:
+        Car2() {
+            cout << "This is a car" << endl;
+        }
+};
+
+class Bus2 : public Vehicle2 {
+    public:
+        Bus2() {
+            cout << "This is a bus" << endl;
+        }
+};
+
+//---------- Hybrid Inheritance ----------
+class Vehicle3 {
+    public:
+        Vehicle3() {
+            cout << "\n--- Hybrid Inheritance ---" << endl;
+            cout << "This is a vehicle" << endl;
+        }
+};
+
+class Fare {
+    public:
+        Fare() {
+            cout << "Fare of vehicle" << endl;
+        }
+};
+
+class Car3 : public Vehicle3 {
+    public:
+        Car3() {
+            cout << "This is a car" << endl;
+        }
+};
+
+class Bus3 : public Vehicle3, public Fare {
+    public:
+        Bus3() {
+            cout << "This is a bus" << endl;
+        }
+};
+
+//---------------- MAIN FUNCTION ----------------
+int main() {
+    // Single Inheritance
+    Car obj1;
+
+    // Multiple Inheritance
+    Milk_Eggs obj2;
+
+    // Multilevel Inheritance
+    Future obj3;
+
+    // Hierarchical Inheritance
+    Car2 obj4;
+    Bus2 obj5;
+
+    // Hybrid Inheritance
+    Bus3 obj6;
+
+    return 0;
+}
