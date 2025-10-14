@@ -1,0 +1,36 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class student{
+	private:
+		string stuname;
+		int rollno;
+		float marks;
+	public:
+		string college;
+		void setdetails(){
+			cout<<"Enter student name: ";
+			getline(cin, stuname);
+			cout<<"Enter roll num: ";
+			cin>>rollno;
+			cout<<"Enter marks(out of 100): ";
+			cin>>marks;
+		}
+		void displaydetails(){
+			cout<<"\n---Student details ---\n";
+			cout<<"Name   : "<<stuname <<endl;
+			cout<<"Rollno : "<<rollno<<endl;
+			cout<<"Marks  : "<<marks<<endl;
+			cout<<"College: "<<college<<endl;
+		}
+};
+int main(){
+	student s1;
+	cout<<"Enter college name: ";
+	getline(cin, s1.college);
+	s1.setdetails();
+	s1.displaydetails();
+	s1.college = "Aditya University";
+	cout<<"\nUpadted College name: "<<s1.college<<endl;
+	return 0;
+}
