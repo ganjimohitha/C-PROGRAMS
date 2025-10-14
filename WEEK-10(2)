@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+template <class T>
+class Calculator{
+	private:
+		T num1,num2;
+	public:
+		Calculator(T n1, T n2){
+			num1 = n1;
+			num2 = n2;
+		}
+	T add() { return num1 + num2;}
+	T subtract() { return num1 - num2;}
+	T multiply() { return num1*num2;}
+	T divide() {
+		if(num2 != 0)
+			return num1 / num2;
+		else{
+			cout<<"Error Division by Zero."<<endl;
+			return 0;
+		}
+	}	
+};
+int main(){
+	Calculator<int> intCalc(8,4);
+	cout<<"Int Calculation:"<<endl;
+	cout<<"Addition = "<<intCalc.add()<<endl;
+	cout<<"Subtraction = "<<intCalc.subtract()<<endl;
+	cout<<"Multiplication = "<<intCalc.multiply()<<endl;
+	cout<<"Division = "<<intCalc.divide()<<endl;
+	cout<<endl;
+
+	Calculator<double> doubleCalc(6.5,4.4);
+	cout<<"Double Calculation:"<<endl;
+	cout<<"Addition = "<<doubleCalc.add()<<endl;
+	cout<<"Subtraction = "<<doubleCalc.subtract()<<endl;
+	cout<<"Multiplication = "<<doubleCalc.multiply()<<endl;
+	cout<<"Division = "<<doubleCalc.divide()<<endl;
+	
+	return 0;
+}
