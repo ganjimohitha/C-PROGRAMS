@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+int main(){
+	int numerator,denominator;
+	double result;
+	cout<<"Enter Numerator: ";
+	cin>>numerator;
+	cout<<"Enter Denominator: ";
+	cin>>denominator;
+	try{
+		if(denominator == 0)
+			throw denominator;
+		result = (double)numerator/denominator;
+		cout<<"Result = "<<result<<endl;
+	}
+	catch(int e){
+		cout<<"Error: Division by Zero is not allowed!"<<endl;
+	}
+		
+	cout<<"End Program..."<<endl;
+	return 0;
+}
